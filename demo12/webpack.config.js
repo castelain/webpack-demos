@@ -1,4 +1,4 @@
-var webpack = require('webpack');
+const webpack = require('webpack');
 
 module.exports = {
   entry: {
@@ -6,12 +6,13 @@ module.exports = {
     bundle2: './main2.jsx'
   },
   output: {
+    path: __dirname + '/dst',
     filename: '[name].js'
   },
   module: {
-    rules:[
+    rules: [
       {
-        test: /\.js[x]?$/,
+        test: /\.js[x]$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -19,16 +20,13 @@ module.exports = {
             presets: ['es2015', 'react']
           }
         }
-      },
+      }
     ]
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-      name: "commons",
-      // (the commons chunk name)
-
-      filename: "commons.js",
-      // (the filename of the commons chunk)
+      name: 'commons',
+      filename: 'commons.js'
     })
   ]
 }

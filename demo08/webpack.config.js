@@ -1,18 +1,20 @@
-var HtmlwebpackPlugin = require('html-webpack-plugin');
-var OpenBrowserPlugin = require('open-browser-webpack-plugin');
+
+var htmlPlugin = require('html-webpack-plugin');
+var openBrowserPlugin = require('open-browser-webpack-plugin');
 
 module.exports = {
   entry: './main.js',
   output: {
+    path: __dirname + '/dist',
     filename: 'bundle.js'
   },
   plugins: [
-    new HtmlwebpackPlugin({
-      title: 'Webpack-demos',
+    new htmlPlugin({
+      title: '3rd-party plugins',
       filename: 'index.html'
     }),
-    new OpenBrowserPlugin({
+    new openBrowserPlugin({
       url: 'http://localhost:8080'
     })
   ]
-};
+}

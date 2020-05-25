@@ -1,9 +1,10 @@
-var webpack = require('webpack');
+
+const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    app: './main.js',
-    vendor: ['jquery'],
+    bundle: './main.js',
+    vendor: ['jquery']
   },
   output: {
     filename: 'bundle.js'
@@ -14,4 +15,4 @@ module.exports = {
       filename: 'vendor.js'
     })
   ]
-};
+}

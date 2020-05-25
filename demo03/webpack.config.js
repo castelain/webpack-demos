@@ -1,3 +1,4 @@
+
 module.exports = {
   entry: './main.jsx',
   output: {
@@ -11,10 +12,10 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['es2015', 'react']
+            presets: ['env', 'react']
           }
         }
       }
     ]
   }
-};
+}

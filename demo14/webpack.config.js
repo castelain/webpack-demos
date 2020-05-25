@@ -18,8 +18,11 @@ module.exports = {
     ]
   },
   externals: {
-    // require('data') is external and available
-    //  on the global var data
-    'data': 'data'
+    // require('data') : data -> 要排除的模块； { data1 }：用于替换的全局变量 window.data1
+    // 'data': 'data1',
+    'react': 'React',
+    'react-dom': 'ReactDOM',
+    '@element-ui/core': 'ElememtUI',
+    // 'data2': 'data2'
   }
 };
